@@ -1,59 +1,66 @@
-<?php 
-		include 'header.php';
-		$aula_atual = 'loop-foreach';
+<?php
+include 'header.php';
+$aula_atual = 'loop-foreach';
+?>
+
+
+<body>
+
+	<h2>LOOP FOREACH</h2>
+	<hr>
+	<small>Curso Básico de PHP</small>
+
+
+
+	<?php
+
+	$cursos = array(
+		array(
+			"n_alunos" => 400,
+			"titulo" => "Excel do zero ao avançado",
+			"url" => "#",
+			"aval" => 200
+		),
+		array(
+			"n_alunos" => 300,
+			"titulo" => "Aprenda Desenvolvimento Web em HTML/CSS",
+			"url" => "#",
+			"aval" => 150
+		),
+		array(
+			"n_alunos" => 280,
+			"titulo" => "Programe em Python",
+			"url" => "#",
+			"aval" => 90
+		),
+		array(
+			"n_alunos" => 150,
+			"titulo" => "JavaScript",
+			"url" => "#",
+			"aval" => 50
+		)
+	);
 	?>
 
 
-	<body>
+	<h3>Meus Cursos</h3>
 
-		<h2>LOOP FOREACH</h2>
-		<hr>
-		<small>Curso de Básico de PHP - Prof. Ivan Lourenço Gomes</small>
+	<ul>
 
-		
+		<?php foreach ($cursos as $curso) { ?>
+			<li>
+				<a href="<?php echo $curso['url'] ?>">
+					<?php echo $curso['titulo'] ?> 
+				</a>
+				<br>
+				<?php echo $curso['n_alunos']. ' Alunos '.'/ '.$curso['aval'].' Avaliações' ?> <br>
+			</li> <br>
+		<?php } ?>
+	</ul>
 
-			<?php 
-
-				$cursos = array(
-								array(
-									"n_alunos" => 400,
-									"titulo" => "Excel do zero ao avançado",
-									"url" => "http://www.udemy.com",
-									"aval" => 200
-								),
-								array(
-									"n_alunos" => 300,
-									"titulo" => "Aprenda Desenvolvimento Web em HTML/CSS",
-									"url" => "http://www.udemy.com",
-									"aval" => 150
-								),
-								array(
-									"n_alunos" => 280,
-									"titulo" => "Programe em Python",
-									"url" => "http://www.udemy.com",
-									"aval" => 90
-								)
-				); 
-			?>
+	<?php include 'functions/bottom_index.php'; ?>
 
 
-		<h3>Meus Cursos</h3>
-
-			
-
-		<h3>Agora é a sua vez</h3>
-
-			<p>Crie um Array, de preferência multidimensional, e solte as informações de cada item deste array em uma lista usando o loop foreach.</p>
-			<br>
-
-		
-
-
-
-
-		<?php include 'functions/bottom_index.php'; ?>
-
-
-	</body>
+</body>
 
 </html>

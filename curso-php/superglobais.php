@@ -10,13 +10,13 @@
 
 		<h2>Variáveis Superglobais</h2>
 		<hr>
-		<small>Curso de Básico de PHP - Prof. Ivan Lourenço Gomes</small>
+		<small>Curso Básico de PHP</small>
 
 
 
 		<h3>$_SERVER</h3>
 
-		<p><?php ?></p>
+		<pre><?php var_dump($_SERVER) ?></pre>
 
 
 
@@ -27,9 +27,20 @@
 		$msg = 'hello world';
 		$bye = 'bye bye world';
 
+		function mensagem() {
+			global $msg;
+			echo $msg. '<br>';
+		}
+		function adeus() {
+			echo $GLOBALS['bye'];
+		}
+
+		mensagem();
+		adeus();
 		?>
 
-		<p><?php ?></p>
+		<!-- <pre><?php var_dump($GLOBALS['msg']) ?></pre>
+		<pre><?php var_dump($GLOBALS['bye']) ?></pre> -->
 
 
 		

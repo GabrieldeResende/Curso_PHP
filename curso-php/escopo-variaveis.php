@@ -16,26 +16,24 @@
 		<h3>Escopo Global x Escopo Local</h3>
 
 			<?php
-				
-
+				// variavel Global
+				$num = 10;
+				echo 'Variavel Global: '. $num. '<br>';
+				function printNum() {
+					// variavel Local
+					global $num;
+					$num += 5;
+					echo 'Variavel Local: '. $num;
+				}
 			?>
 
 			<p>
-			<?php ?>	
+			<?php printNum(); ?>	
 			</p><br>
 
 			<p>
-			<?php ?>	
+			<?php echo 'Variavel Global apos passar pela função: '. $num ?>	
 			</p><br>
-
-			
-
-			
-
-
-		
-
-
 		<br><br>
 		<?php include 'functions/bottom_index.php'; ?>
 

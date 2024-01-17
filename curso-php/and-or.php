@@ -10,7 +10,7 @@
 
 		<h2>AND e OR</h2>
 		<hr>
-		<small>Curso de Básico de PHP - Prof. Ivan Lourenço Gomes</small>
+		<small>Curso Básico de PHP</small>
 
 		<?php
 
@@ -21,31 +21,33 @@
 		$aluno = array (
 			'nome' => 'Fernando Costa',
 			'media' => 7.5,
-			'faltas' => 6
+			'faltas' => 8
 		);
-
+		$presencaAluno = ($total_aulas - $aluno['faltas']) / $total_aulas
 		?>
 
 		<h3>AND</h3>
 		<h4>Situação do aluno: </h4>
-		<p></p>
+		<p>
+			<?php if($aluno['media'] >= $media_aprov AND $presencaAluno >= $presenca_aprov) {
+				echo "Aprovado";
+			}  else {
+				echo "Reprovado";
+			}?>
+		</p>
 		<br>
 
 		<h3>OR</h3>
 		<h4>Situação do aluno: </h4>
-		<p></p>
+		<p>
+		<p>
+			<?php if($aluno['media'] < $media_aprov OR $presencaAluno < $presenca_aprov) {
+				echo "Aprovado";
+			}  else {
+				echo "Reprovado";
+			}?>
+		</p>
 		<br>
-
-		
-
-		
-
-
-
-
-
-
-
 		<?php include 'functions/bottom_index.php'; ?>
 
 

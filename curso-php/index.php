@@ -9,7 +9,7 @@
 
 		<h2>Índice de Aulas</h2>
 		<hr>
-		<small>Curso de Básico de PHP - Prof. Ivan Lourenço Gomes</small>
+		<small>Curso Básico de PHP</small>
 	
 
 

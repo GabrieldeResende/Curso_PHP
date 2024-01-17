@@ -10,26 +10,26 @@
 
 		<h2>NULL</h2>
 		<hr>
-		<small>Curso de Básico de PHP - Prof. Ivan Lourenço Gomes</small>
+		<small>Curso Básico de PHP</small>
 
 		<h3>NULL = Ausência de valor</h3>
 
+		<?php $posts = '';
+
+		var_dump($posts);
+
+		echo '<br>'; 
+		echo '<br>';
+
+		if ($posts == null) {
+			echo 'A variavel é igual a null';
+		} else {
+			echo 'A variavel nao é null';
+		}
+		?>
+
 
 		<h3>Resultado da pesquisa</h3>
-
-		<h3>Agora é a sua vez</h3>
-
-			<p>Crie um Array, de preferência multidimensional, e solte as informações de cada item deste array em uma lista usando o loop foreach.</p>
-			<br>
-
-		
-
-
-
-
-
-
-
 		<?php include 'functions/bottom_index.php'; ?>
 
 

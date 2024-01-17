@@ -8,7 +8,7 @@ $aula_atual = 'tipos-dados';
 
 	<h2>Tipos de Dados</h2>
 	<hr>
-	<small>Curso de Básico de PHP - Prof. Ivan Lourenço Gomes</small>
+	<small>Curso Básico de PHP</small>
 	<br>
 
 	<h3>Função var_dump</h3>

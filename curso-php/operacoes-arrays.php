@@ -8,7 +8,7 @@
 
 		<h2>OPERAÇÕES COM ARRAYS</h2>
 		<hr>
-		<small>Curso de Básico de PHP - Prof. Ivan Lourenço Gomes</small>
+		<small>Curso Básico de PHP</small>
 
 		<?php
 
@@ -47,33 +47,67 @@
 		<h3>Array Push</h3>
 			
 		<?php 
+			$alunoNovo = array();
+			$alunoNovo['matricula'] = '123456';
+			$alunoNovo['nome'] = 'Jorginho';
+			$alunoNovo['ano_nasc'] = 1998;
+			$alunoNovo['cidade'] = 'Samambaia';
+			array_push($alunos, $alunoNovo);
 
+			echo '<pre>';
+			print_r($alunos);
+			echo '</pre>';
+
+			$alunos90 = array();
+			foreach ($alunos as $aluno) {
+				if ($aluno['ano_nasc'] >= 1990) {
+					$alunos90[$aluno['matricula']] = array();
+					$alunos90[$aluno['matricula']]['nome'] = $aluno['nome'];
+					$alunos90[$aluno['matricula']]['ano_nasc'] = $aluno['ano_nasc'];
+				}
+			}
 		?>
 
 		<h4>Alunos Nascidos depois de 1990: </h4>
 		<br>
-		<pre></pre>
+		<pre>
+			<?php print_r($alunos90) ?>
+		</pre>
 
 
 
 
 		<h3>Array Keys</h3>
 		<?php 
-
+			
 		?>
 
 		<h4>Matrícula dos Alunos Nascidos depois de 1990: </h4>
 		<br>
-		<pre></pre>
+		<pre>
+			<?php print_r(array_keys($alunos90)) ?>
+		</pre>
 
 
 
 
 		<h3>In Array</h3>
-
+			<?php
+				$matricula = '456789'
+			?>
 		<h4>Busca de aluno por matrícula: </h4>
 		<br>
-		<p></p>
+		<?php 
+			if(in_array($matricula, array_keys($alunos90))) { ?>
+				<p>
+					<?php echo 'A matricula '. $matricula . ' pertence ao aluno(a): '. $alunos90[$matricula]['nome']. ' Nascido(a) em: '. $alunos90[$matricula]['ano_nasc'] ?>
+				</p>
+
+			 <?php } else { ?>
+				<p>
+					<?php echo 'Matricula '. $matricula. ' não foi encontrada' ?>
+				</p>
+				<?php } ?>
 
 
 		
