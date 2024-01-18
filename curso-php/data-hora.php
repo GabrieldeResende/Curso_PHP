@@ -10,7 +10,7 @@
 
 		<h2>Data e Hora</h2>
 		<hr>
-		<small>Curso de Básico de PHP - Prof. Ivan Lourenço Gomes</small>
+		<small>Curso Básico de PHP</small>
 
 		
 		<h3>Epoch</h3>
@@ -24,7 +24,8 @@
 		<p>
 
 			<?php
-				
+				$agora = time();
+				echo date("d/m/Y", $agora);
 			?>
 			
 		</p>
@@ -33,7 +34,8 @@
 		<h3>Função mktime</h3>
 
 			<?php
-				
+				$nascimento = mktime(0,0,0,12,06,1998);
+				echo date("d/m/Y", $nascimento)
 				
 				
 			?>
@@ -46,7 +48,11 @@
 		<h3>Função strtotime</h3>
 
 			<?php
-				
+				$outraData = strtotime("December 06 1998");
+				$hoje = strtotime("now + 4weeks monday");
+				echo date("d/m/Y", $outraData);
+				echo '<br>';
+				echo date("d/m/Y", $hoje);
 			?>
 
 		<p>
@@ -58,7 +64,7 @@
 		<h3>Função date</h3>
 
 			<?php
-				
+				echo date("d/M/y h i s ", $outraData);
 			?>
 
 		<p>
@@ -69,7 +75,8 @@
 		<h3>Fuso horário</h3>
 
 			<?php
-				
+				date_default_timezone_set("America/Sao_Paulo");
+				echo date_default_timezone_get()
 			?>			
 
 		<p>
@@ -81,7 +88,14 @@
 		<h3>Cálculos com data e hora</h3>
 
 			<?php
-				
+				$dataEntrega = strtotime("18 jan 2024");
+				$dataEsperada = strtotime("16 jan 2024");
+				if ($dataEntrega > $dataEsperada) {
+					$atraso = ($dataEntrega - $dataEsperada) / 60 /60 /24; 
+					echo "Produto entregue com atraso de ". $atraso. " dias";
+				} else {
+					echo "Produto entregue no prazo";
+				}
 			?>
 
 		<p>
@@ -90,28 +104,12 @@
 		<br>
 
 
-		
-
-
-
-
 		<h3>Tabela de caracteres da função date</h3>
 
 		
 
 
 		<?php include 'tabela-date.php'; ?>
-
-
-		
-
-
-
-
-
-
-
-
 
 
 		<?php include 'functions/bottom_index.php'; ?>

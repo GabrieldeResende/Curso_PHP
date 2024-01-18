@@ -10,7 +10,7 @@
 
 		<h2>Variável Superglobal $_GET</h2>
 		<hr>
-		<small>Curso de Básico de PHP - Prof. Ivan Lourenço Gomes</small>
+		<small>Curso Básico de PHP</small>
 
 
 		
@@ -18,7 +18,7 @@
 		<h3>$_GET</h3>
 
 
-		<p><?php  ?></p>
+		<p><?php echo($_GET['item'])  ?></p>
 		<br>
 
 
@@ -59,20 +59,27 @@
 		<?php  ?>
 
 		<h4>Produto: </h4>
-		<p><?php  ?></p>
+		<p><?php echo $produtos[$_GET['item']]['nome']  ?></p>
 		<br>
 		
 		<h4>Descrição: </h4>
-		<p><?php  ?></p>
+		<p><?php echo $produtos[$_GET['item']]['descricao']  ?></p>
 		<br>
 		
 		<h4>Calorias: </h4>
-		<p><?php  ?></p>
+		<p><?php echo $produtos[$_GET['item']]['calorias']  ?></p>
 		<br>
 
 		<h4><u>Conheça nossos produtos</u></h4><br>
 		
 		<ul>	
+			<?php foreach($produtos as $chave => $valor){ ?>
+				<li>
+					<a href="<?php echo 'superglobal-get.php?item='. $chave; ?>">
+						<?php echo $valor['nome'] ?>
+					</a>
+				</li>
+			 <?php } ?>
 		</ul>
 
 
@@ -104,19 +111,18 @@
 		<br>
 
 		<h4>Produto: </h4>
-		<p>solte o nome aqui</p>
+		<p>
+			<?php echo $itens[$_GET['id']]['nome'] ?>
+		</p>
 		<br>
 
 		<h4>Tamanhos disponíveis: </h4>
-		<p>solte os tamanhos aqui</p>
-
-		
-		
-
-
-
-
-
+		<p>
+			<?php $tamanhos = $itens[$_GET['id']]['tamanhos'] ?>
+			<?php foreach($tamanhos as $tamanho) {
+				echo $tamanho. ", ";
+			} ?>
+		</p>
 
 
 
