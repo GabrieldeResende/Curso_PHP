@@ -10,7 +10,7 @@
 
 		<h2>ESCOPO DAS VARIÁVEIS</h2>
 		<hr>
-		<small>Curso de Básico de PHP - Prof. Ivan Lourenço Gomes</small>
+		<small>Curso Básico de PHP</small>
 
 
 		<h3>Escopo Global x Escopo Local</h3>
