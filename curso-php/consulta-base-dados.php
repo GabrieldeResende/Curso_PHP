@@ -10,7 +10,7 @@
 
 		<h2>Consulta à base de dados</h2>
 		<hr>
-		<small>Curso de Básico de PHP - Prof. Ivan Lourenço Gomes</small>
+		<small>Curso Básico de PHP</small>
 
 
 		<h3>Dados dos clientes</h3>
